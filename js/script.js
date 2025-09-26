@@ -16,7 +16,7 @@ buscador.addEventListener('input', () => {
         const regex = new RegExp(`(${palabra})`, 'gi');
         if (regex.test(titulo.textContent)) {
             // Resaltamos solo dentro del título
-            titulo.innerHTML = titulo.textContent.replace(regex, '<span style="background-color: blue;">$1</span>');
+            titulo.innerHTML = titulo.textContent.replace(regex, '<span style="background-color: red;">$1</span>');
         }
     });
 });

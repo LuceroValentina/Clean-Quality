@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de la Calidad del Software</title>
+<link rel="stylesheet" href="../css/Gestiondecalidad.css">
+</head>
+
+<body>
+    <header>
+        <div class="fila-titulo">
+            <h2 class="titulo">CLEAN <br> QUALITY</h2>
+            <img src="imagenes/logo.png" alt="logo de la empresa">
+        </div>
+        <div class="fila-inicio">
+            <h2 class="texto-inicio">Inicio</h2>
+        </div>
+        <div class="fila-vacia"></div>
+        <div class="buscador">
+            <input type="text" id="buscador" placeholder="Buscador">
+        </div>
+    </header>
+
+    <div class="container" id="contenido">
+
+        <!-- Sección Fundamentos -->
+        <section class="seccion-fundamentos">
+            <h1>Fundamentos</h1>
+
+            <article>
+                <h2>Estándares</h2>
+                <p>Referentes de ingeniería de software y calidad:</p>
+                <ul>
+                    <li>ISO 9000, ISO 12207, SPICE, SW-CMM.</li>
+                    <li>También los modelos de procesos tradicionales como CMMI e ISO 33000.</li>
+                </ul>
+                <p>Estos se usan como base en enfoques predictivos, pero Scrum enfatiza la flexibilidad y adaptación más
+                    que el cumplimiento estricto de normas.</p>
+            </article>
+
+            <article>
+                <h2>Métricas</h2>
+                <p>Medición y estimación ágil:</p>
+                <ul>
+                    <li>Se recomienda usar pocas métricas y solo las que aporten valor.</li>
+                    <li>Se mide lo que queda por hacer, no lo ya completado.</li>
+                    <li>Se usan unidades relativas en lugar de absolutas.</li>
+                </ul>
+                <p>Ejemplo: métricas de velocidad del equipo (puntos de historia, esfuerzo en tiempo ideal vs real).</p>
+            </article>
+
+            <article>
+                <h2>Calidad</h2>
+                <p>Calidad es el grado en que un software cumple estándares reconocidos y satisface las necesidades del
+                    cliente, combinando buenas prácticas de procesos con adaptabilidad y mejoras continuas, medidas
+                    mediante métricas simples y útiles.</p>
+            </article>
+        </section>
+
+        <!-- Sección Técnicas -->
+        <section class="seccion-tecnicas">
+            <h1>Técnicas de Aseguramiento de la Calidad</h1>
+
+            <article>
+                <h2>Técnicas</h2>
+                <p>Técnicas de aseguramiento de la calidad:</p>
+                <ul>
+                    <li>Scrum no habla de QA como disciplina aislada, pero se incorporan prácticas que cumplen ese rol:
+                        <ul>
+                            <li>Revisiones de sprint: verificar qué se construyó y recoger feedback.</li>
+                            <li>Retrospectivas: analizar cómo se trabajó y planificar mejoras.</li>
+                            <li>Definición de Hecho (DoD): acuerdo del equipo sobre cuándo algo está realmente terminado
+                                y probado.</li>
+                            <li>Técnicas de calidad como diagramas de causa-efecto (Ishikawa), poka-yoke, sistemas
+                                andon.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h2>Niveles y Tipos</h2>
+                <p>En Scrum se mencionan los niveles de validación desde las tareas de los desarrolladores hasta la
+                    entrega final (incremento probado y operativo).</p>
+                <p>No usa la clasificación clásica (unitarias, integración, sistema, aceptación) de forma explícita,
+                    pero sí incorpora:</p>
+                <ul>
+                    <li>Pruebas funcionales y no funcionales como parte del DoD.</li>
+                    <li>Automatización recomendada para mantener calidad en iteraciones cortas.</li>
+                    <li>Validación con el usuario en revisiones de sprint (equivalente a aceptación).</li>
+                </ul>
+
+                <h3>Pruebas Unitarias</h3>
+                <ul>
+                    <li>Qué son: verifican el funcionamiento de la parte más pequeña del software (función, clase,
+                        módulo).</li>
+                    <li>Objetivo: detectar errores de manera temprana y asegurar que cada componente cumple con lo
+                        esperado.</li>
+                    <li>Cuándo se hacen: durante el desarrollo, a nivel de código.</li>
+                    <li>Quién las hace: principalmente los desarrolladores.</li>
+                    <li>Ejemplo: probar que una función de cálculo de impuestos devuelva el valor correcto con distintos
+                        valores de entrada.</li>
+                </ul>
+
+                <h3>Pruebas de Integración</h3>
+                <ul>
+                    <li>Qué son: verifican la interacción entre diferentes módulos o componentes ya probados
+                        individualmente.</li>
+                    <li>Objetivo: comprobar que las piezas encajan y se comunican sin errores (interfaces, bases de
+                        datos, servicios).</li>
+                    <li>Cuándo se hacen: después de las unitarias, antes de las pruebas de sistema.</li>
+                    <li>Quién las hace: desarrolladores o equipo de QA.</li>
+                    <li>Ejemplo: probar que el módulo de login funciona correctamente con la base de datos de usuarios y
+                        el sistema de autenticación.</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Sección Herramientas -->
+        <section class="seccion-herramientas">
+            <h1>Herramientas de Calidad</h1>
+            <p>Herramientas de calidad en Scrum:</p>
+
+            <article>
+                <h2>Trello</h2>
+                <ul>
+                    <li>Es una herramienta colaborativa para gestionar la Pila del Producto y la Pila del Sprint.</li>
+                    <li>Su función es gestión visual: los equipos pueden crear tableros con tarjetas que representan
+                        historias de usuario o tareas, y moverlas entre columnas según su estado (pendiente, en
+                        progreso, terminado).</li>
+                </ul>
+                <p>Ventajas: simple, flexible, muy visual, favorece la transparencia y el radiador de información, ideal
+                    para equipos pequeños o cuando recién se empieza con Scrum/Kanban.</p>
+            </article>
+
+            <article>
+                <h2>Jira</h2>
+                <ul>
+                    <li>Es la herramienta más usada en Scrum y Agile a nivel profesional.</li>
+                    <li>Funcionalidades clave:
+                        <ul>
+                            <li>Permite gestionar backlogs, sprints, historias de usuario y épicas.</li>
+                            <li>Incluye gráficos de avance (burn down, burn up) y métricas de velocidad del equipo.</li>
+                            <li>Soporta automatización de flujos de trabajo y se integra con QA (por ejemplo, con
+                                pruebas en Xray, Zephyr).</li>
+                            <li>Escalable para grandes organizaciones con múltiples equipos.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Relación con la Calidad: Jira ayuda en el aseguramiento de calidad porque hace visible el progreso
+                    del trabajo y las dependencias, facilita detectar bloqueos temprano, refuerza la transparencia y
+                    colaboración, y se conecta con la Definición de Hecho (DoD) y métricas ágiles.</p>
+            </article>
+
+            <article>
+                <h2>Otras herramientas</h2>
+                <ul>
+                    <li>Herramientas de Gestión de Pruebas: TestLink, Zephyr.</li>
+                    <li>Seguimiento de Defectos: Jira, Bugzilla.</li>
+                    <li>Análisis de Calidad: SonarQube.</li>
+                </ul>
+            </article>
+        </section>
+
+    </div>
+<script src="../js/script.js"></script>
+
+</body>
+
+</html>
