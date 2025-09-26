@@ -10,47 +10,6 @@ body {
     overflow: hidden;
 }
 
-h1 {
-    font-family: "Jura", sans-serif;
-    font-weight: 800;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-}
-
-.texto-bienvenida {
-    font-family: "Arimo", sans-serif;
-    font-size: 17px;
-    color: white;
-    text-align: justify;
-    width: 80%;
-}
-
-.titulo {
-    color: white;
-    font-family: "Rubik Mono One", monospace;
-    font-size: 20px;
-    text-align: justify;
-
-}
-
-.titulo-secciones {
-    color: white;
-    font-family: "Jura", sans-serif;
-    text-align: center;
-}
-
-.titulo-funcionalidades {
-    color: white;
-    font-family: "Arimo", sans-serif;
-    text-align: center;
-    font-size: 15px;
-}
-
-.funcionalidades-ul {
-    list-style: none;
-}
-
 header {
     display: grid;
     grid-template-columns: 20% 20% 20% 40%;
@@ -69,25 +28,32 @@ header {
     justify-content: center;
     align-items: center;
     border-right: 1px solid rgb(255, 255, 255);
-
 }
 
-.buscador {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.titulo {
+    color: white;
+    font-family: "Rubik Mono One", monospace;
+    font-size: 20px;
+    text-align: justify;
 }
 
-input {
-    width: 280px;
-    height: 40px;
-    border-radius: 25px;
+img {
+    width: 70px;
+    height: 90px;
 }
 
 .fila-inicio {
     background-color: #0b5394;
     height: 75px;
 
+}
+
+h1 {
+    font-family: "Jura", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: white;
+    text-align: center;
 }
 
 .fila-vacia {
@@ -97,12 +63,17 @@ input {
 }
 
 .buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #00225f;
+
 }
 
-img {
-    width: 70px;
-    height: 90px;
+input {
+    width: 280px;
+    height: 40px;
+    border-radius: 25px;
 }
 
 .container {
@@ -122,6 +93,12 @@ img {
 
 }
 
+.titulo-secciones {
+    color: white;
+    font-family: "Jura", sans-serif;
+    text-align: center;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -129,9 +106,25 @@ a {
     font-size: 13.4px;
 }
 
-li {
-    color: white;
+.lista_baja {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+
 }
+
+.titulo-funcionalidades {
+    color: white;
+    font-family: "Arimo", sans-serif;
+    text-align: center;
+    font-size: 15px;
+}
+
+.funcionalidades-ul {
+    list-style: none;
+}
+
 
 .container_inicial {
     display: flex;
@@ -147,6 +140,14 @@ li {
     margin-top: -40px;
 }
 
+.texto-bienvenida {
+    font-family: "Arimo", sans-serif;
+    font-size: 17px;
+    color: white;
+    text-align: justify;
+    width: 80%;
+}
+
 .cuadrado_de_texto {
     display: grid;
     grid-template-rows: 50px 300px;
@@ -160,23 +161,12 @@ li {
 
 }
 
-.sobrenosotros {
-    margin-top: 8px;
-}
-
 .texto-subtitulo {
     color: white;
     font-family: "Arimo", sans-serif;
     font-size: 15px;
     margin-left: 20px;
     margin-top: 17px;
-}
-
-.texto-explicacion {
-    color: white;
-    font-family: "Arimo", sans-serif;
-    font-size: 15px;
-    width: 90%;
 }
 
 .fila2 {
@@ -188,10 +178,17 @@ li {
     height: 120px;
 }
 
-.lista_baja {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 250px;
+.texto-explicacion {
+    color: white;
+    font-family: "Arimo", sans-serif;
+    font-size: 15px;
+    width: 90%;
+}
 
+li {
+    color: white;
+}
+
+.sobrenosotros {
+    margin-top: 8px;
 }
