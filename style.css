@@ -196,5 +196,7 @@ li {
 }
 
 .sobrenosotros {
-    margin-top: 8px;
+    display: block;
+    text-align: center;
+    margin: 20px auto;
 }
