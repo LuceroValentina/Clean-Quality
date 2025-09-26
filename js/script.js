@@ -6,17 +6,24 @@ const titulosOriginales = Array.from(titulos).map(t => t.innerHTML);
 
 buscador.addEventListener('input', () => {
     const palabra = buscador.value.trim();
+    let encontrado = false; // lleva al primer resultado que encuentra
 
     titulos.forEach((titulo, index) => {
         // Restaurar el texto original antes de cada búsqueda
         titulo.innerHTML = titulosOriginales[index];
 
-        if (palabra === '') return; // si no hay búsqueda, no hacemos nada
+        if (palabra === '') return; // si no hay búsqueda no hace nada
 
         const regex = new RegExp(`(${palabra})`, 'gi');
         if (regex.test(titulo.textContent)) {
             // Resaltamos solo dentro del título
             titulo.innerHTML = titulo.textContent.replace(regex, '<span style="background-color: red;">$1</span>');
+
+            // Se desplaza al primer titulo que encuentra
+            if (!encontrado) {
+                titulo.scrollIntoView({ behavior: 'smooth', block: 'center' });// genera el scroll hasta donde se encuentra la palabra
+                encontrado = true;
+            }
         }
     });
 });

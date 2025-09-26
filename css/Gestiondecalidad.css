@@ -7,6 +7,7 @@ body {
     padding: 0;
     margin: 0;
     background: radial-gradient(#52a2e8, #052058);
+    overflow-x: hidden;
 }
 
 header {
@@ -118,4 +119,9 @@ p {
     color: white;
     text-align: justify;
     margin-left: 15px;
+    width: 95%;
+}
+a{
+    text-decoration: none;
+    color: white;
 }
