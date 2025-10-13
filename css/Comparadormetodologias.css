@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    background: radial-gradient(#52a2e8, #052058);
+    overflow-x: hidden;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 40%;
+    height: 75px;
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.fila-titulo {
+    background-color: #1569b2;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgb(255, 255, 255);
+
+}
+
+.titulo {
+    color: white;
+    font-family: "Rubik Mono One", monospace;
+    font-size: 20px;
+    text-align: justify;
+
+}
+
+img {
+    width: 70px;
+    height: 90px;
+}
+
+.fila-inicio {
+    background-color: #0b5394;
+    height: 75px;
+}
+
+.texto-inicio {
+    font-family: "Jura", sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+.fila-vacia {
+    background-color: #083a76;
+    height: 75px;
+
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00225f;
+
+}
+
+input {
+    width: 280px;
+    height: 40px;
+    border-radius: 25px;
+}
+
+h1 {
+    font-family: "Jura", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: 33.3 33.3 33.3;
+}
