@@ -84,6 +84,10 @@ input {
 
 }
 
+.container {
+    margin-top: 8%;
+}
+
 p,
 h3 {
     color: white;
@@ -132,10 +136,23 @@ a {
 .texto-informativo {
     width: 80%;
     text-align: justify;
-    
+
 }
 
 .img-grafico {
     width: 900px;
     height: 600px;
+}
+
+button {
+    height: 30px;
+    background-color: #fdd020;
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 15px;
+    top: 15px;
 }
