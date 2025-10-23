@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(#52a2e8, #052058);
+    position: relative;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 40%;
+    height: 75px;
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.fila-titulo {
+    background-color: #1569b2;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgb(255, 255, 255);
+
+}
+
+.fila-inicio {
+    background-color: #0b5394;
+    height: 75px;
+}
+
+.texto-inicio {
+    font-family: "Jura", sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+.fila-vacia {
+    background-color: #083a76;
+    height: 75px;
+}
+
+img {
+    width: 70px;
+    height: 90px;
+}
+
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00225f;
+
+}
+
+.container {
+    margin-top: 3%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+input {
+    width: 280px;
+    height: 40px;
+    border-radius: 25px;
+
+}
+
+.container-formulario {
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    margin-top: 10px;
+    width: 300px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #083a76;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    z-index: 10;
+
+}
+
+.container-formulario.active {
+    max-height: 500px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 230px;
+    gap: 5px;
+}
+
+.input-formulario {
+    margin-top: 10px;
+    width: 90%;
+    height: 30px;
+    background-color: #1569b2;
+    border: none;
+    color: white;
+}
+
+.input-formulario::placeholder {
+    color: white;
+    font-family: 'Arimo', sans-serif;
+
+}
+
+.formulario {
+    position: absolute;
+    left: 15px;
+    top: 10%;
+}
+
+.btn {
+    width: 300px;
+    height: 45px;
+    margin-top: 15px;
+    margin-left: 15px;
+    background-color: #00225f;
+    color: white;
+    font-weight: bold;
+    font-family: "Jura", sans-serif;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+.btn-enviar {
+    height: 30px;
+    width: 70px;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    background-color: #00225f;
+
+}
+
+
+
+.encabezado {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 20px;
+    position: relative;
+}
+
+.titulo {
+    color: white;
+    font-family: "Rubik Mono One", monospace;
+    font-size: 20px;
+    text-align: justify;
+
+}
+
+.titulo-sobrenosotros {
+    color: white;
+    font-family: "Jura", sans-serif;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.texto {
+    width: 80%;
+    text-align: justify;
+    color: rgb(240, 237, 237);
+    font-family: "Arimo", sans-serif;
+    font-weight: bold;
+}
+
+strong {
+    color: #fdd020;
+    font-weight: bold;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.volver button {
+    height: 30px;
+    background-color: #fdd020;
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 13%;
+}

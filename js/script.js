@@ -1,69 +1,96 @@
-const buscador = document.getElementById('buscador');
-const titulos = document.querySelectorAll('#contenido h1, #contenido h2, #contenido h3, #contenido h4, #contenido h5, #contenido h6');
-const select1 = document.getElementById("select1");
-const select2 = document.getElementById("select2");
-const info = document.getElementById("info");
+document.addEventListener('DOMContentLoaded', () => {
 
-// Guardamos los contenidos originales de los títulos
-const titulosOriginales = Array.from(titulos).map(t => t.innerHTML);
+    // 1️⃣ Buscador de títulos
+    const buscador = document.getElementById('buscador');
+    const titulos = document.querySelectorAll('#contenido h1, #contenido h2, #contenido h3, #contenido h4, #contenido h5, #contenido h6');
 
-buscador.addEventListener('input', () => {
-    const palabra = buscador.value.trim();
-    let encontrado = false; // lleva al primer resultado que encuentra
+    if (buscador && titulos.length > 0) {
+        const titulosOriginales = Array.from(titulos).map(t => t.innerHTML);
 
-    titulos.forEach((titulo, index) => {
-        // Restaurar el texto original antes de cada búsqueda
-        titulo.innerHTML = titulosOriginales[index];
+        buscador.addEventListener('input', () => {
+            const palabra = buscador.value.trim();
+            let encontrado = false;
 
-        if (palabra === '') return; // si no hay búsqueda no hace nada
+            titulos.forEach((titulo, index) => {
+                titulo.innerHTML = titulosOriginales[index];
 
-        const regex = new RegExp(`(${palabra})`, 'gi');
-        if (regex.test(titulo.textContent)) {
-            // Resaltamos solo dentro del título
-            titulo.innerHTML = titulo.textContent.replace(regex, '<span style="background-color: red;">$1</span>');
+                if (palabra === '') return;
 
-            // Se desplaza al primer titulo que encuentra
-            if (!encontrado) {
-                titulo.scrollIntoView({ behavior: 'smooth', block: 'center' });// genera el scroll hasta donde se encuentra la palabra
-                encontrado = true;
-            }
-        }
-    });
-});
+                const regex = new RegExp(`(${palabra})`, 'gi');
+                if (regex.test(titulo.textContent)) {
+                    titulo.innerHTML = titulo.textContent.replace(regex, '<span style="background-color: red;">$1</span>');
 
-
-//Código del comparador de metodologías
-// Función para actualizar las opciones disponibles en select2
-function actualizarSelect2() {
-  const valor1 = select1.value;
-  for (let option of select2.options) {
-    option.disabled = option.value === valor1 && valor1 !== "";
-  }
-}
-
-// Función para mostrar información según la combinación
-function mostrarInfo() {
-  const valor1 = select1.value;
-  const valor2 = select2.value;
-
-  if (valor1 && valor2) {
-    // Aquí defines la información que quieres mostrar según la combinación
-    if (valor1 === "opcion1" && valor2 === "opcion2") {
-      info.innerHTML = "Has elegido Opción 1 y Opción 2.";
-    } else if (valor1 === "opcion2" && valor2 === "opcion3") {
-      info.innerHTML = "Has elegido Opción 2 y Opción 3.";
-    } else {
-      info.innerHTML = `Combinación: ${valor1} + ${valor2}`;
+                    if (!encontrado) {
+                        titulo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        encontrado = true;
+                    }
+                }
+            });
+        });
     }
-  } else {
-    info.innerHTML = "";
-  }
-}
 
-// Event listeners
-select1.addEventListener("change", () => {
-  actualizarSelect2();
-  mostrarInfo();
+    // 2️⃣ Comparador de metodologías
+    const data = {
+        cascada: { planificacion: "Secuencial, fases fijas", flexibilidad: "Muy baja", retroalimentacion: "Al final del proyecto", entrega: "Producto único al final", roles: "Analista, desarrollador, tester", herramientas: "Documentación, diagramas de Gantt", objetivos: "Cumplir especificaciones iniciales" },
+        modelov: { planificacion: "Secuencial con pruebas asociadas", flexibilidad: "Muy baja", retroalimentacion: "Al final de cada validación", entrega: "Única al final", roles: "Analista, diseñador, tester", herramientas: "Documentación y pruebas", objetivos: "Garantizar calidad y verificación" },
+        iterativo: { planificacion: "Iteraciones planificadas y entregas parciales", flexibilidad: "Media a alta", retroalimentacion: "En cada incremento", entrega: "Parcial y frecuente", roles: "Equipo técnico y gestor", herramientas: "Jira, Trello, herramientas de seguimiento", objetivos: "Adaptarse a cambios gradualmente" },
+        scrum: { planificacion: "Iteraciones (Sprints)", flexibilidad: "Alta", retroalimentacion: "En cada sprint", entrega: "En cada sprint", roles: "Product Owner, Scrum Master, Equipo", herramientas: "Jira, Trello", objetivos: "Entregar valor y mejorar continuamente" },
+        kanban: { planificacion: "Flujo continuo", flexibilidad: "Muy alta", retroalimentacion: "Continua", entrega: "Entrega continua", roles: "Sin roles definidos", herramientas: "Trello, Kanbanize", objetivos: "Mantener flujo eficiente" },
+        xp: { planificacion: "Iteraciones cortas", flexibilidad: "Alta", retroalimentacion: "Constante", entrega: "Entregas frecuentes", roles: "Programadores y cliente activo", herramientas: "Git, Jenkins", objetivos: "Mejorar calidad del código" },
+    };
+
+    function actualizar() {
+        const select1 = document.getElementById("select1");
+        const select2 = document.getElementById("select2");
+        if (!select1 || !select2) return;
+
+        const metodo1 = select1.value;
+        const metodo2 = select2.value;
+
+        Array.from(select1.options).forEach(opt => opt.disabled = (opt.value === metodo2 && opt.value !== ""));
+        Array.from(select2.options).forEach(opt => opt.disabled = (opt.value === metodo1 && opt.value !== ""));
+
+        document.querySelectorAll(".info").forEach(div => {
+            const row = div.dataset.row;
+            const col = div.dataset.col;
+
+            if (col === "2" && metodo1 && data[metodo1]) div.textContent = data[metodo1][row] || "";
+            if (col === "3" && metodo2 && data[metodo2]) div.textContent = data[metodo2][row] || "";
+        });
+    }
+
+    const s1 = document.getElementById("select1");
+    const s2 = document.getElementById("select2");
+    if (s1 && s2) {
+        s1.addEventListener("change", actualizar);
+        s2.addEventListener("change", actualizar);
+        actualizar();
+    }
+
+    // 3️⃣ Formulario de contacto
+    const form = document.getElementById('formulario');
+    if (form) {
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const campos = form.querySelectorAll('input');
+            let vacio = false;
+            campos.forEach(campo => { if (campo.value.trim() === "") vacio = true; });
+
+            if (vacio) {
+                alert("Por favor, completá todos los campos antes de enviar.");
+            } else {
+                alert("¡El formulario se envió con éxito!");
+            }
+        });
+    }
+
+    // 4️⃣ Botón desplegar formulario
+    const btn = document.getElementById('btn-formulario');
+    const container = document.getElementById('container-formulario');
+    if (btn && container) {
+        btn.addEventListener('click', () => {
+            container.classList.toggle('active');
+        });
+    }
+
 });
-
-select2.addEventListener("change", mostrarInfo);

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre nosotros</title>
+    <link rel="stylesheet" href="../css/Sobrenosotros.css">
+
+</head>
+
+<body id="contenido">
+    <header>
+        <div class="fila-titulo">
+            <h2 class="titulo">CLEAN <br> QUALITY</h2>
+            <img src="../imagenes/logo.png" alt="logo de la empresa">
+        </div>
+        <div class="fila-inicio">
+            <a href="../PantallaInicio.html">
+                <h2 class="texto-inicio">Inicio</h2>
+            </a>
+        </div>
+        <div class="fila-vacia"></div>
+        <div class="buscador">
+            <input type="text" id="buscador" placeholder="Buscador">
+        </div>
+    </header>
+    <div class="container">
+        <div class="formulario">
+            <button class="btn" id="btn-formulario">Formulario Contacto <strong
+                    style="margin-left:15px;  font-size:20px; color: white;">+</strong></button>
+
+            <div class="container-formulario" id="container-formulario">
+                <form action="" id="formulario">
+                    <input type="text" id="nombre" class="input-formulario" placeholder="Ingrese su nombre" required>
+                    <input type="email" id="email" class="input-formulario" placeholder="Ingrese su correo" required>
+                    <input type="text" id="asunto" class="input-formulario" placeholder="Ingrese el asunto" required>
+                    <input type="text" id="consulta" class="input-formulario" placeholder="Ingrese la consulta"
+                        required>
+                    <button class="btn-enviar" id="mensaje" onclick="mensajeConfirmacion()"
+                        type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <h1 class="titulo-sobrenosotros">Sobre Nosotros</h1>
+
+
+        <div class="texto">
+            <p>
+                Somos cinco personas las que conformamos este equipo, con distintos roles que se encargan de que cada
+                parte
+                de un proyecto quede de la mejor manera posible, trabajando en conjunto para malabarear soluciones en
+                los
+                momentos más difíciles. Nuestro enfoque está en la colaboración (palmaditas en grupo para no llorar), la
+                comunicación constante (casi sin pelea) y la mejora continua (cada día más pro), con el objetivo de
+                conseguir entregar los trabajos en tiempo y forma y poder aprobar la materia.<br>
+                Nuestro equipo está compuesto por individuos con buenas habilidades y experiencias (seis años de
+                depresión
+                escolar) que aportan al proyecto desde diversas perspectivas. A través de los sprints, reuniones diarias
+                y
+                retrospectivas, nos aseguramos de mantener un ambiente de trabajo dinámico y adaptable (ayuda Brisa nos
+                esclaviza).<br>
+                Cada miembro desempeña un rol clave:<br>
+                <strong>Facundo Carrasco (documentador):</strong> aunque de vez en cuando se pierde y otras veces entra
+                en
+                crisis con la
+                organización de la entrega final, su gran organización, buena memoria y excelente atención al detalle
+                mantiene en pie el día a día del proyecto con los scrums diarios y la búsqueda de la información.<br>
+                <strong>Valentina Lucero (programadora):</strong> gracias a su increíble habilidad encuentra soluciones
+                prácticas para poner
+                en marcha las ideas del diseño y hacerlas funcionales, como si con solo mirar el código pudiera hacer
+                que
+                todo funcione de manera impecable, aun cuando a veces quiere revolear la compu por la ventana. Su
+                búsqueda
+                por la perfección la lleva a entregar el mejor producto del mercado.<br>
+                <strong>Guadalupe Carrasquera (marketing):</strong> como si fuera un enano piquetero con un bombo en
+                media
+                ruta se encarga de
+                que todos sepan en lo que estamos trabajando, creando estrategias que no solo aumentan la visibilidad
+                del
+                proyecto, sino que también hacen que llegue a las personas correctas.<br>
+                <strong>Florencia Sanchez (diseñadora):</strong> lleva el arte en la sangre y tiene un ojo excepcional
+                para
+                los detalles, con
+                sus ideas innovadoras se encarga de que cada interfaz tenga una esencia única, cuando la procrastinación
+                no
+                le gana.<br>
+                <strong>Brisa Hernández (scrum master):</strong> con una mente analítica y una habilidad especial para
+                solucionar problemas
+                se asegura, con el látigo en la mano, de que todos sigamos el proceso, trabajemos eficientemente y, lo
+                más
+                importante, mantiene un muy buen ambiente de trabajo, enfocándonos y ayudándonos con todas las dudas,
+                por
+                mas de que tenga que salir de la habitación a tomar aire, con mucha paciencia.
+            </p>
+        </div>
+    </div>
+    <div class="volver">
+        <a href="../PantallaInicio.html">
+            <button>Volver</button>
+        </a>
+    </div>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

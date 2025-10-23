@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso de Desarrollo</title>
+    <link rel="stylesheet" href="../css/Procesodedesarrollo.css">
+</head>
+
+<body>
+    <header>
+        <div class="fila-titulo">
+            <h2 class="titulo">CLEAN <br> QUALITY</h2>
+            <img class="logo" src="../imagenes/logo.png" alt="logo de la empresa">
+        </div>
+        <div class="fila-inicio">
+            <a href="../PantallaInicio.html">
+                <h2 class="texto-inicio">Inicio</h2>
+            </a>
+        </div>
+        <div class="fila-vacia"></div>
+        <div class="buscador">
+            <input type="text" id="buscador" placeholder="Buscador">
+        </div>
+    </header>
+    <div class="container" id="contenido">
+        <div class="ciclodevida">
+            <div class="titulo1">
+                <h1>Ciclo de Vida del Desarrollo de Software (SDLC)</h1>
+                <div class="texto-informativo">
+                    <p>El Ciclo de Vida del Desarrollo de Software (SDLC) es el proceso que define las etapas necesarias
+                        para crear un software de calidad.
+                        Cada fase tiene como objetivo planificar, construir, probar e implementar el sistema
+                        garantizando que cumpla con las necesidades del usuario.</p>
+                    <h3>Etapas del SDLC:</h3>
+                    <ol>
+                        <li>Análisis de Requisitos: se identifican las necesidades del cliente o usuario.</li>
+                        <li>Diseño del Sistema: se definen la arquitectura, interfaces y componentes del software.</li>
+                        <li>Desarrollo o Codificación: los programadores escriben el código siguiendo los requerimientos
+                            definidos.</li>
+                        <li>Pruebas: se realizan pruebas unitarias, de integración, de sistema y de aceptación para
+                            garantizar la calidad.</li>
+                        <li>Implementación: el software se entrega al cliente o se publica para uso real.</li>
+                        <li>Mantenimiento: se corrigen errores, se realizan mejoras y actualizaciones.</li>
+                    </ol>
+
+                    <p><strong>Importancia:</strong>
+                        El SDLC permite organizar el trabajo, reducir errores y garantizar que el software sea
+                        confiable, mantenible y útil para los usuarios.</p>
+                </div>
+            </div>
+        </div>
+        <div class="modelostradicionales">
+            <div class="titulo2">
+                <h1>Modelos Tradicionales del Ciclo de Vida del Software</h1>
+            </div>
+            <div class="texto-informativo">
+                <h2>Modelo en Cascada</h2>
+                <h3>Descripción</h3>
+                <p>
+                    El modelo en cascada es uno de los enfoques más antiguos y estructurados para el desarrollo de
+                    software. Se basa en una secuencia rígida de etapas, donde cada fase debe completarse antes de pasar
+                    a la siguiente. El progreso fluye como una cascada, de manera descendente, desde la definición de
+                    requisitos hasta la entrega final del producto.<br>
+                    El proceso comienza con el análisis de requisitos, donde se identifican las necesidades del cliente
+                    y las funciones que el sistema debe cumplir. Luego se realiza el diseño del sistema, en el cual se
+                    define la arquitectura general, los módulos, las bases de datos y las interfaces. Posteriormente,
+                    los desarrolladores llevan a cabo la codificación o programación del software, transformando los
+                    diseños en un sistema funcional.<br>
+                    Una vez finalizado el desarrollo, se realizan las pruebas para garantizar que el software cumpla con
+                    los requisitos establecidos y funcione correctamente. Finalmente, se procede a la implementación o
+                    despliegue, instalando el sistema en el entorno de trabajo, y se continúa con el mantenimiento, que
+                    incluye corrección de errores, actualizaciones y mejoras a lo largo del tiempo.<br>
+                </p>
+                <h3>
+                    Ventajas
+                </h3>
+                <ul>
+                    <li>Permite una planificación clara y un control estricto de cada etapa.</li>
+                    <li>Facilita la documentación detallada del proceso de desarrollo.</li>
+                    <li>Es fácil de entender y aplicar, especialmente en equipos nuevos o proyectos educativos.
+                    </li>
+                </ul>
+                <h3>Desventajas</h3>
+                <ul>
+                    <li>Es un modelo rígido que no se adapta fácilmente a los cambios.</li>
+                    <li>Los errores suelen detectarse en etapas tardías del proceso.</li>
+                    <li>La retroalimentación del cliente ocurre solo al final del desarrollo.</li>
+                </ul>
+                <h3>Cuándo usarlo:</h3>
+                <p>
+                    El modelo en cascada se utiliza en proyectos pequeños, con requisitos bien definidos desde el
+                    principio
+                    y pocas posibilidades de cambio. También es apropiado en entornos donde se exige una documentación
+                    completa, como proyectos gubernamentales, institucionales o académicos.
+                </p>
+                <img src="../imagenes/grafico1.png" class="img-grafico" alt="gráfico del modelo cascada">
+
+                <h2>Modelo en V</h2>
+                <h3>Descripción</h3>
+                <p>El modelo en V, conocido también como modelo de Verificación y Validación, es una evolución del
+                    modelo en cascada que incorpora la revisión y prueba del software en todas sus etapas. Su nombre
+                    proviene de la forma de la letra “V”, ya que cada fase de desarrollo tiene una fase de prueba
+                    equivalente.<br>
+                    En este modelo, el lado izquierdo de la “V” representa las etapas de análisis y diseño, mientras que
+                    el lado derecho corresponde a las pruebas asociadas. Por ejemplo, los requisitos del sistema se
+                    validan mediante pruebas de aceptación; el diseño general se prueba con pruebas de sistema; el
+                    diseño detallado se verifica a través de pruebas de integración; y la codificación se evalúa con
+                    pruebas unitarias.<br>
+                    Este enfoque garantiza que cada componente sea revisado desde su concepción hasta su validación
+                    final, reduciendo errores y asegurando una calidad superior en el producto final.
+                </p>
+                <h3>Ventajas</h3>
+                <ul>
+                    <li>Asegura un control de calidad constante durante todo el ciclo de desarrollo.</li>
+                    <li>Establece una relación clara entre las etapas de diseño y las pruebas.</li>
+                    <li>Permite detectar errores y fallas antes de la implementación final.</li>
+                </ul>
+                <h3>Desventajas</h3>
+                <ul>
+                    <li>Mantiene la rigidez del modelo en cascada, dificultando los cambios.</li>
+                    <li>Requiere una planificación extensa y mucha documentación.</li>
+                    <li>Puede ser costoso y lento en proyectos grandes o con requisitos cambiantes.</li>
+                </ul>
+                <h3>Cuándo usarlo:</h3>
+                <p>Este modelo es ideal para proyectos donde la calidad, seguridad y fiabilidad son críticas, como en el
+                    desarrollo de software médico, financiero, militar o aeronáutico. También es recomendable en
+                    proyectos que requieren pruebas exhaustivas y trazabilidad completa de los requisitos.</p>
+
+                <h2>Modelo Iterativo e Incremental</h2>
+                <h3>Descripción</h3>
+                <p>El modelo iterativo e incremental combina dos estrategias complementarias que permiten desarrollar
+                    software de forma más flexible y adaptativa. En su parte iterativa, el sistema se construye en
+                    ciclos repetidos o iteraciones, donde cada ciclo revisa, mejora y amplía lo ya desarrollado. En su
+                    aspecto incremental, el software se entrega en pequeñas partes funcionales —llamadas incrementos—
+                    que se van sumando hasta completar el producto final.
+                    Cada iteración incluye las etapas de análisis, diseño, desarrollo y pruebas, permitiendo que el
+                    cliente reciba versiones parciales del producto que puede utilizar y evaluar. Esto fomenta la
+                    retroalimentación constante, facilita la detección temprana de errores y mejora la satisfacción del
+                    usuario al involucrarse activamente en el proceso.
+                </p>
+                <h3>Ventajas</h3>
+                <ul>
+                    <li>Ofrece una gran flexibilidad para incorporar cambios a lo largo del proyecto.</li>
+                    <li>Permite entregas tempranas de versiones funcionales del sistema.</li>
+                    <li>Facilita la comunicación continua con el cliente y la detección temprana de errores.</li>
+                </ul>
+                <h3>Desventajas</h3>
+                <ul>
+                    <li>Requiere una coordinación constante entre el equipo de desarrollo y el cliente.</li>
+                    <li>Puede generar complejidad en la gestión de múltiples versiones o incrementos.</li>
+                    <li>Demanda una planificación cuidadosa para evitar inconsistencias en el producto.</li>
+                </ul>
+
+                <h3>Cuándo usarlo:</h3>
+                <p>Este modelo es apropiado para proyectos grandes, innovadores o en los que los requisitos cambian con
+                    frecuencia. También es ideal cuando se desea obtener retroalimentación temprana del cliente o se
+                    necesita lanzar versiones iniciales al mercado rápidamente.</p>
+                <h3>Fases del Modelo Incremental</h3>
+            </div>
+            <img src="../imagenes/grafico3.png" class="img-grafico" alt="Fases del modelo incremental">
+
+        </div>
+        <div class="metodologiasagiles">
+            <div class="titulo3">
+                <h1>Metodologías Ágiles</h1>
+            </div>
+            <div class="texto-informativo">
+                <p>Las metodologías ágiles surgieron como respuesta a las limitaciones de los modelos tradicionales. Su
+                    propósito principal es ofrecer un proceso de desarrollo flexible, centrado en las personas, la
+                    colaboración y la entrega continua de valor al cliente. En lugar de seguir un plan estricto y
+                    lineal, las metodologías ágiles se adaptan al cambio y priorizan la comunicación y la mejora
+                    constante.</p>
+                <h2>Scrum</h2>
+                <h3>Descripción:</h3>
+                <p>Scrum es una de las metodologías ágiles más populares y efectivas. Se basa en el trabajo por ciclos
+                    cortos llamados Sprints, que suelen durar entre una y cuatro semanas. Durante cada Sprint, el equipo
+                    planifica, desarrolla, prueba y entrega una parte funcional del producto, conocida como incremento.
+                    Este enfoque iterativo permite obtener resultados tangibles al final de cada ciclo, lo que garantiza
+                    una mejora continua y una respuesta rápida ante los cambios.<br>
+                    Scrum se estructura en torno a tres roles principales: el Product Owner, encargado de priorizar las
+                    tareas y mantener la lista de requisitos (Product Backlog); el Scrum Master, responsable de guiar al
+                    equipo y asegurar que se cumplan los principios ágiles; y el Equipo de Desarrollo, que trabaja de
+                    forma autónoma y colaborativa para construir el producto.<br>
+                    A lo largo de cada Sprint, se realizan reuniones específicas conocidas como ceremonias: la
+                    planificación del Sprint, las reuniones diarias (Daily Scrum), la revisión del Sprint y la
+                    retrospectiva. Estas actividades fomentan la comunicación, la transparencia y la mejora continua.
+                </p>
+                <h3>Ventajas</h3>
+                <ul>
+                    <li>Promueve la colaboración y la comunicación entre todos los miembros del equipo.</li>
+                    <li>Facilita la entrega frecuente de valor al cliente y la adaptación a los cambios.</li>
+                    <li>Permite identificar problemas rápidamente y resolverlos durante el desarrollo.</li>
+                </ul>
+                <h3>Desventajas</h3>
+                <ul>
+                    <li>Puede ser difícil de implementar en equipos grandes o poco experimentados.</li>
+                    <li>Requiere una participación activa y constante de todas las partes involucradas.</li>
+                    <li>Puede perder efectividad si no se respetan los roles y ceremonias.</li>
+                </ul>
+                <h3>Cuándo usarlo:</h3>
+                <p>Scrum es ideal para proyectos con requisitos cambiantes o que requieren resultados rápidos, como el
+                    desarrollo de aplicaciones móviles, software web o productos que evolucionan continuamente.</p>
+                <h2>Kanban</h2>
+                <h3>Descripción:</h3>
+                <p>Descripción:
+                    Kanban es una metodología ágil enfocada en la gestión visual del trabajo y la optimización del flujo
+                    de tareas. Utiliza tableros divididos en columnas (por ejemplo, “Por hacer”, “En progreso” y
+                    “Hecho”) donde se colocan tarjetas que representan las tareas o historias de usuario. A medida que
+                    el trabajo avanza, las tarjetas se mueven por el tablero, permitiendo visualizar el estado del
+                    proyecto en tiempo real.<br>
+                    Una característica clave de Kanban es el uso de límites de trabajo en progreso (WIP), que impiden
+                    sobrecargar al equipo y ayudan a mantener un ritmo de trabajo equilibrado. Este método no impone
+                    fases fijas ni roles definidos, lo que le da una gran flexibilidad para adaptarse a diferentes tipos
+                    de equipos y proyectos.
+                </p>
+                <h3>Ventajas</h3>
+                <ul>
+                    <li>Brinda una visión clara y en tiempo real del flujo de trabajo.</li>
+                    <li>Facilita la detección de cuellos de botella y mejora la productividad.</li>
+                    <li>Permite una gestión flexible y adaptable sin ciclos fijos.</li>
+                </ul>
+                <h3>Desventajas</h3>
+                <ul>
+                    <li>Puede ser difícil de aplicar en equipos que no tienen disciplina organizativa.</li>
+                    <li>No establece plazos concretos ni roles definidos, lo que puede generar ambigüedad.</li>
+                    <li>Requiere seguimiento constante para mantener la eficiencia del sistema.</li>
+                </ul>
+                <h3>Cuándo usarlo:</h3>
+                <p>Kanban es ideal para proyectos con flujo de trabajo continuo, como mantenimiento de software,
+                    atención al cliente o gestión de soporte técnico, donde las tareas deben priorizarse de manera
+                    dinámica.</p>
+                <h2>Extreme Programming (XP)</h2>
+                <h3>Descripción</h3>
+                <p>Extreme Programming, o XP, es una metodología ágil centrada en la calidad técnica del software y en
+                    la colaboración continua entre los desarrolladores y el cliente. Su objetivo principal es producir
+                    software de alta calidad que pueda adaptarse rápidamente a los cambios de requisitos.<br>
+                    XP se basa en prácticas como la programación en pareja (pair programming), donde dos programadores
+                    trabajan juntos en el mismo código; la integración continua, que consiste en combinar y probar el
+                    código frecuentemente para detectar errores; y el desarrollo guiado por pruebas (Test-Driven
+                    Development), que implica escribir las pruebas antes del código para asegurar su correcto
+                    funcionamiento. Además, promueve la refactorización constante, es decir, la mejora del código sin
+                    modificar su comportamiento.<br>
+                    Gracias a estas prácticas, XP logra una mayor estabilidad, un código más limpio y una reducción
+                    significativa de los errores.
+                </p>
+                <h3>Ventajas</h3>
+                <ul>
+                    <li>Garantiza una alta calidad del código y un producto más confiable.</li>
+                    <li>Fomenta la colaboración entre el cliente y el equipo técnico.</li>
+                    <li>Reduce los riesgos mediante la detección temprana de errores.</li>
+                </ul>
+                <h3>Desventajas</h3>
+                <ul>
+                    <li>Requiere un equipo altamente capacitado y disciplinado.</li>
+                    <li>Puede resultar costoso en términos de tiempo y recursos.</li>
+                    <li>No es adecuado para proyectos muy grandes o distribuidos.</li>
+                </ul>
+                <h3>Cuándo usarlo:</h3>
+                <p>XP se aplica en proyectos que exigen gran calidad técnica, rapidez de entrega y adaptación constante,
+                    como startups tecnológicas, desarrollo de prototipos o aplicaciones personalizadas para clientes.
+                </p>
+                <h3>Gráfico del Modelo de desarrollo secuencial: Modelo V</h3>
+            </div>
+            <img src="../imagenes/grafico2.png" class="img-grafico" alt="Validación Modelo V">
+
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

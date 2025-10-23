@@ -77,26 +77,41 @@ input {
 
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container-comparador {
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+    grid-template-rows: 50px 100px 100px 100px 100px 100px 100px 100px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.titulo-columna1 {
+    background-color: #12518a;
+    color: white;
+    font-family: "Arimo", sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    border: 1px solid #858181;
+    border-right: 2px solid white;
+
+}
+
 h1 {
     font-family: "Jura", sans-serif;
     font-weight: 800;
     font-size: 30px;
     color: white;
-    text-align: center;
-}
-
-.container {
-    height: 100dvh;
-    display: grid;
-    grid-template-rows: 33.3 33.3 33.3;
-    justify-content: center;
-    align-items: center;
-}
-
-.container-comparador {
-    display: grid;
-    grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 50px 300px;
     text-align: center;
 }
 
@@ -109,18 +124,75 @@ select {
     font-family: "Arimo", sans-serif;
     font-weight: bold;
     font-size: 17px;
-        border-right: 2px solid white;
-
-
-}
-
-.metodologia {
     border-right: 2px solid white;
-    background-color: #12518a;
-     text-align: center;
-    color: white;
-    font-family: "Arimo", sans-serif;
-    font-weight: bold;
-    font-size: 17px;
 }
 
+.select1 {
+    grid-column: 2;
+}
+
+.select2 {
+    grid-column: 3;
+}
+
+.columna1 {
+    display: contents;
+}
+
+
+.div-comparador {
+    grid-column: 1;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    font-family: "Arimo", sans-serif;
+    font-size: 14.5px;
+
+}
+
+.info {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    font-family: "Arimo", sans-serif;
+    font-size: 15px;
+}
+
+.enlace-preferencias {
+    background-color: #fdd020;
+    font-family: "Jura", sans-serif;
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    height: 30px;
+    background-color: #fdd020;
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
