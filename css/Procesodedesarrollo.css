@@ -140,9 +140,16 @@ a {
 }
 
 .img-grafico {
-    width: 900px;
-    height: 600px;
+    width: 800px;
+    height: 400px;
 }
+
+.img-grafico3 {
+    width: 800px;
+    height: 400px;
+    margin-bottom: 15px;
+}
+
 
 button {
     height: 30px;
