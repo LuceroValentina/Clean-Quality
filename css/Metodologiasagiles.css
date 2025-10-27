@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(#52a2e8, #052058);
+    position: relative;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 40%;
+    height: 75px;
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.fila-titulo {
+    background-color: #1569b2;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgb(255, 255, 255);
+
+}
+
+.titulo {
+    color: white;
+    font-family: "Rubik Mono One", monospace;
+    font-size: 20px;
+    text-align: justify;
+
+}
+
+.logo {
+    width: 70px;
+    height: 90px;
+}
+
+.fila-inicio {
+    background-color: #0b5394;
+    height: 75px;
+}
+
+.texto-inicio {
+    font-family: "Jura", sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+.fila-vacia {
+    background-color: #083a76;
+    height: 75px;
+
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00225f;
+
+}
+
+input {
+    width: 280px;
+    height: 40px;
+    border-radius: 25px;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    margin-top: 7%;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel-lateral {
+    background-color: #2d8bba;
+    color: white;
+    font-family: "Jura", sans-serif;
+    width: 276px;
+    height: 603px;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+
+}
+
+.sobreroles,
+.sobresprints,
+.herramientas h2 {
+    background-color: #0b5394;
+    color: white;
+    font-family: "Jura", sans-serif;
+    text-align: center;
+
+}
+
+.contenido-derecha {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
