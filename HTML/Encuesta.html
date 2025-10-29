@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de preferencias</title>
+    <link rel="stylesheet" href="../css/Encuesta.css">
+</head>
+
+<body>
+    <header>
+        <div class="fila-titulo">
+            <h2 class="titulo">CLEAN <br> QUALITY</h2>
+            <img class="logo" src="../imagenes/logo.png" alt="logo de la empresa">
+        </div>
+        <div class="fila-inicio">
+            <a href="../PantallaInicio.html">
+                <h2 class="texto-inicio">Inicio</h2>
+            </a>
+        </div>
+        <div class="fila-vacia"></div>
+        <div class="buscador">
+            <input type="text" id="buscador" placeholder="Buscador">
+        </div>
+    </header>
+    <div class="container" id="contenido">
+        <div class="container-form">
+
+            <form id="formulario">
+                <div class="form-titulo">
+                    <h2>Encuesta de preferencias Metodológicas</h2>
+                </div>
+                <div class="pregunta">
+                    <p>¿Tenés los requisitos del proyecto completamente definidos desde el inicio, o pueden ir cambiando
+                        con
+                        el tiempo? </p>
+                    <div class="checkbox">
+                        <label><input type="radio" name="q1" value="Modelo V">Totalmente definidos</label>
+                        <label><input type="radio" name="q1" value="Incremental">Pueden cambiar parcialmente</label>
+                        <label><input type="radio" name="q1" value="Scrum">Irán cambiando con frecuencia</label>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <p>¿Qué tan importante es la entrega rápida de resultados parciales o prototipos funcionales? </p>
+                    <div class="checkbox">
+                        <label><input type="radio" name="q2" value="Cascada">No es necesaria, puedo esperar el producto
+                            final</label>
+                        <label><input type="radio" name="q2" value="Incremental">Sería útil ver avances
+                            intermedios</label>
+                        <label><input type="radio" name="q2" value="Kanban">Es esencial entregar versiones funcionales
+                            frecuentes</label>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <p>¿Qué tan grande es tu equipo de trabajo?</p>
+                    <div class="checkbox">
+                        <label><input type="radio" name="q3" value="Modelo V">1 a 3 personas</label>
+                        <label><input type="radio" name="q3" value="Incremental">4 a 10 personas</label>
+                        <label><input type="radio" name="q3" value="Scrum">Más de 10 personas</label>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <p>¿Qué tan experto o experimentado es tu equipo en desarrollo de software y metodologías ágiles?
+                    </p>
+                    <div class="checkbox">
+                        <label><input type="radio" name="q4" value="Cascada">Poco o sin experiencia</label>
+                        <label><input type="radio" name="q4" value="Incremental">Algo de experiencia</label>
+                        <label><input type="radio" name="q4" value="Scrum">Muy experimentado</label>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <p>¿Qué nivel de interacción constante con el cliente o usuario final podés mantener durante el
+                        proyecto?</p>
+                    <div class="checkbox">
+                        <label><input type="radio" name="q5" value="Modelo V">Solo al inicio y al final</label>
+                        <label><input type="radio" name="q5" value="Incremental">Revisiones ocasionales</label>
+                        <label><input type="radio" name="q5" value="Kanban">Comunicación frecuente y continua</label>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <p>¿Qué tan crítico es el control de calidad y verificación en cada etapa del proyecto?</p>
+                    <div class="checkbox">
+                        <label><input type="radio" name="q6" value="Modelo V">Es fundamental y debe ser muy
+                            riguroso</label>
+                        <label><input type="radio" name="q6" value="Incremental">Moderadamente importante</label>
+                        <label><input type="radio" name="q6" value="Scrum">Flexible, se puede ajustar con el
+                            avance</label>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <p>¿Cuánto tiempo disponible tenés para planificar detalladamente antes de comenzar el desarrollo?
+                    </p>
+                    <div class="checkbox">
+                        <label><input type="radio" name="q7" value="Modelo V">Mucho tiempo para planificar</label>
+                        <label><input type="radio" name="q7" value="Incremental">Un tiempo moderado</label>
+                        <label><input type="radio" name="q7" value="Scrum">Muy poco tiempo, necesito empezar
+                            pronto</label>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <p>¿Qué tan flexible es el presupuesto y el cronograma del proyecto?</p>
+                    <div class="checkbox">
+                        <label><input type="radio" name="q8" value="Cascada">Debe mantenerse fijo</label>
+                        <label><input type="radio" name="q8" value="Incremental">Puede ajustarse un poco</label>
+                        <label><input type="radio" name="q8" value="Kanban">Es bastante flexible</label>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <p>¿Qué nivel de documentación necesitás mantener a lo largo del proyecto?</p>
+                    <div class="checkbox">
+                        <label><input type="radio" name="q9" value="Modelo V">Alta (todo documentado paso a
+                            paso)</label>
+                        <label><input type="radio" name="q9" value="Incremental">Media (solo lo esencial)</label>
+                        <label><input type="radio" name="q9" value="Scrum">Baja (priorizo la comunicación directa
+                            sobre
+                            documentos)</label>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <p>¿Qué tan importante es la visualización y control del flujo de trabajo diario para tu equipo?</p>
+                    <div class="checkbox"> <label><input type="radio" name="q10" value="Cascada">Poco importante</label>
+                        <label><input type="radio" name="q10" value="Incremental">Útil, pero no esencial</label>
+                        <label><input type="radio" name="q10" value="Kanban">Muy importante para la organización y
+                            seguimiento</label>
+                    </div>
+                </div>
+
+                <button class="boton-enviar" type="submit">Enviar</button>
+            </form>
+
+            <p id="resultado"></p>
+        </div>
+        <div class="volver">
+            <a href="../PantallaInicio.html">
+                Volver
+            </a>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

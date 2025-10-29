@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos y Aprendizaje</title>
+    <link rel="stylesheet" href="../css/Recursosyaprendizaje.css">
+</head>
+
+<body>
+    <header>
+        <div class="fila-titulo">
+            <h2 class="titulo">CLEAN <br> QUALITY</h2>
+            <img class="logo" src="../imagenes/logo.png" alt="logo de la empresa">
+        </div>
+        <div class="fila-inicio">
+            <a href="../PantallaInicio.html">
+                <h2 class="texto-inicio">Inicio</h2>
+            </a>
+        </div>
+        <div class="fila-vacia"></div>
+        <div class="buscador">
+            <input type="text" id="buscador" placeholder="Buscador">
+        </div>
+    </header>
+    <div class="container" id="contenido">
+        <div class="container-izq">
+            <h1>Ejercicios y preguntas prácticas:</h1>
+            <div class="practicas">
+                <div class="practica1">
+                    <p>¿Cuáles son los principales roles en Scrum?</p>
+                    <button class="boton-desaparecer">Product Owner, Scrum máster y equipo de desarrollo</button>
+                </div>
+                <div class="practica2">
+                    <p>¿Qué característica clave tiene un Sprint?</p>
+                    <button class="boton-desaparecer">Todos los Sprints tienen la misma duración para mantener un ritmo
+                        constante</button>
+                </div>
+                <div class="practica3">
+                    <p>¿Qué tres preguntas básicas se responden en las reuniones diarias (Daily Meetings)?</p>
+                    <button class="boton-desaparecer">¿Qué hice ayer?, ¿Qué haré hoy?, ¿Hay algún impedimento?</button>
+                </div>
+                <div class="practica4">
+                    <p>¿Qué ventaja tiene el modelo iterativo e incremental sobre los tradicionales?</p>
+                    <button class="boton-desaparecer">Permite retroalimentación temprana y entregas parciales del
+                        producto</button>
+                </div>
+                <div class="practica5">
+                    <p>En el SDLC tradicional, ¿en qué etapa suelen detectarse más tarde los errores y por qué puede ser
+                        problemático?</p>
+                    <button class="boton-desaparecer">En la fase de pruebas, porque los errores detectados tardíamente
+                        implican retrabajo
+                        costoso</button>
+                </div>
+                <div class="practico6">
+                    <p>¿Por qué el modelo iterativo e incremental es más adecuado para proyectos con requisitos
+                        cambiantes
+                        comparado con modelos tradicionales?</p>
+                    <button class="boton-desaparecer">Porque permite entregas parciales y recibir retroalimentación
+                        antes de completar todo el
+                        producto.</button>
+                </div>
+                <div class="practica7">
+                    <p>Una empresa gubernamental necesita desarrollar un sistema con requisitos muy claros, mucha
+                        documentación
+                        y poco margen para cambios. ¿Qué modelo de desarrollo sería más adecuado y por qué?</p>
+                    <button class="boton-desaparecer">Modelo en Cascada, porque ofrece planificación clara y control
+                        estricto</button>
+                </div>
+                <div class="practica8">
+                    <p>En un proyecto grande, el cliente quiere ver avances funcionales periódicamente y dar feedback
+                        antes
+                        de
+                        completar el producto final. ¿Qué modelo facilita esto mejor y por qué?</p>
+                    <button class="boton-desaparecer">Modelo Iterativo e Incremental, porque permite entregas parciales
+                        y ajustes según
+                        retroalimentación</button>
+                </div>
+                <div class="practica9">
+                    <p>Durante un Sprint, el equipo se encuentra con un bloqueo técnico que impide avanzar con varias
+                        tareas.
+                        ¿Qué rol de Scrum debe intervenir y cómo?</p>
+                    <button class="boton-desaparecer">Scrum Master, para eliminar impedimentos y facilitar la
+                        resolución</button>
+                </div>
+                <div class="practica10">
+                    <p>última y dificil: Una startup tecnológica necesita entregar software rápidamente pero con alta
+                        calidad y
+                        mínima cantidad de errores. ¿Qué práctica de Extreme Programming (XP) ayuda a lograr esto y
+                        cómo?
+                    </p>
+                    <button class="boton-desaparecer">Programación en pareja y desarrollo guiado por pruebas (TDD),
+                        porque aseguran revisión
+                        continua
+                        y
+                        detección temprana de errores</button>
+                </div>
+            </div>
+
+            <div class="juegos">
+                <h1>¡Poné practica tus conocimientos con estos minujuegos!</h1>
+
+                <div class="juego-1">
+                    <h2 class="titulo-minijuego">Encontrá el par</h2>
+                    <div id="stats">0 intentos</div>
+                    <div id="wrapper">
+                        <div id="game"></div>
+                    </div>
+                </div>
+                <div class="juego-2">
+                    <h2>Unir definiciones con nombres</h2>
+                    <div id="game2">
+                        <div id="nombres" class="column"></div>
+                        <div id="definiciones" class="column"></div>
+                    </div>
+                    <div id="resultado"></div>
+                </div>
+                <div class="juego-3">
+                    <div class="adivinanzas">
+                        <h2>¡Adivina adivinador!</h2>
+
+                        <div class="adiv1">
+                            <p>“Trabajo en equipo, ciclos cortos me guían, reuniones diarias me mantienen en línea. ¿Qué
+                                metodología
+                                soy?”</p>
+                            <button class="boton-desaparecer">Scrum</button>
+                        </div>
+                        <div class="adiv2">
+                            <p>“Un paso tras otro, sin volver atrás, planeo todo desde el inicio y sigo hasta el final.
+                                ¿Quién
+                                soy?”
+                            </p>
+                            <button class="boton-desaparecer">Cascada</button>
+                        </div>
+                        <div class="adiv3">
+                            <p>“No todo lo hago de una vez, voy mejorando con cada vuelta, ajustando errores y
+                                repitiendo
+                                hasta
+                                que
+                                queda bien. ¿Qué metodología soy?”</p>
+                            <button class="boton-desaparecer">Iterativo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-der">
+            <div class="glosario">
+                <div class="titulo-glosario">Glosario</div>
+                <div class="palabras">
+                    <ul>
+                        <li class="definiciones-glosario">Sistemas Andon: Alerta visual de problemas.</li>
+                        <li class="definiciones-glosario">Poka-yoke: Prevención de errores humanos.</li>
+                        <li class="definiciones-glosario">Diagramas de causa-fecto: Identifica causas de problemas.</li>
+                        <li class="definiciones-glosario">Definición de Hecho (DoD): Criterios para trabajo completado.
+                        </li>
+                        <li class="definiciones-glosario">Cuellos de Botella: Obstáculo que ralentiza proceso.</li>
+                        <li class="definiciones-glosario">Refactorización: Mejora código sin cambiar funcionalidad.</li>
+                        <li class="definiciones-glosario">Desarrollo guiado por pruebas (TDD): Programar guiado por
+                            tests.</li>
+                        <li class="definiciones-glosario">Pair programming: Programación en pareja colaborativa.</li>
+                        <li class="definiciones-glosario">Limites de trabajo en progreso (WIP): Máximo tareas activas
+                            simultáneas.</li>
+                        <li class="definiciones-glosario">Métricas Ágiles:Medición rendimiento en proyectos ágiles.</li>
+                    </ul>
+
+                </div>
+            </div>
+
+
+            <div class="preguntas-frecuentes">
+                <div class="titulo-preguntas">Preguntas Frecuentes</div>
+
+                <div class="pregunta">
+                    <button class="boton-preguntas">¿Qué es la gestión de calidad del software?</button>
+                    <div class="respuesta">
+                        <p class="texto-respuesta">Es el conjunto de actividades que garantizan que el software cumpla
+                            con los requisitos y
+                            estándares. Su propósito es asegurar la satisfacción del cliente y la mejora continua.</p>
+                    </div>
+                </div>
+
+                <div class="pregunta">
+                    <button class="boton-preguntas">¿Cuáles son las diferencias entre producción por procesos y por
+                        personas?</button>
+                    <div class="respuesta">
+                        <p class="texto-respuesta">Por procesos: depende de métodos definidos.<br>
+                            Por personas: depende de la habilidad individual.</p>
+                    </div>
+                </div>
+
+                <div class="pregunta">
+                    <button class="boton-preguntas">¿Cuáles son las etapas del SDLC?</button>
+                    <div class="respuesta">
+                        <p class="texto-respuesta">Requerimientos, análisis, diseño, desarrollo, pruebas, implementación
+                            y mantenimiento.</p>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <button class="boton-preguntas">¿Diferencia entre cascada y modelo en V?</button>
+                    <div class="respuesta">
+                        <p class="texto-respuesta">En el modelo en V, cada fase de desarrollo tiene una fase de prueba
+                            asociada; en cascada, las
+                            pruebas ocurren solo al final.</p>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <button class="boton-preguntas">¿Por qué medir lo que falta en ágil?</button>
+                    <div class="respuesta">
+                        <p class="texto-respuesta">Porque permite evaluar el progreso real, planificar entregas y
+                            detectar retrasos a tiempo.
+                        </p>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <button class="boton-preguntas">¿Qué prácticas se incluyen en Scrum para asegurar la calidad del
+                        producto final?</button>
+                    <div class="respuesta">
+                        <p class="texto-respuesta">Revisiones, retrospectivas, pruebas continuas, integración continua y
+                            la Definición de Hecho
+                            (DoD).</p>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <button class="boton-preguntas"> ¿Qué son las pruebas unitarias y cuál es su principal objetivo?
+                    </button>
+                    <div class="respuesta">
+                        <p class="texto-respuesta">Son pruebas que validan el funcionamiento individual de componentes
+                            del código. Su objetivo
+                            es detectar errores temprano y asegurar que cada parte funcione correctamente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="links">
+                <h2>Links de interes</h2>
+                <a href="Scrum.org" target="_blank">Scrum.org</a>
+                <a href="https://www.atlassian.com/blog" target="_blank">Atlassian Blog</a>
+            </div>
+
+
+
+        </div>
+        <div class="volver">
+            <a href="../PantallaInicio.html">
+                Volver
+            </a>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -6,12 +6,8 @@
 body {
     padding: 0;
     margin: 0;
-    height: 100vh;
     width: 100%;
     background: radial-gradient(#295174, #052058);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 header {
@@ -79,7 +75,7 @@ header {
 
 }
 
-input {
+#buscador {
     width: 280px;
     height: 40px;
     border-radius: 25px;
@@ -91,37 +87,88 @@ a {
 }
 
 .container {
-    height: 100%;
-    width: 80%;
-    margin-top: 14%;
+    margin-top: 10%;
+    margin-bottom: 8%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    text-align: justify;
-
-}
-
-h1 {
-    font-family: "Jura", sans-serif;
-    color: white;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-h2,
-h3 {
-    color: rgb(204, 204, 204);
+h2 {
     font-family: "Jura", sans-serif;
-    font-weight: bold;
+    color: white;
+}
+
+.form-titulo {
+    background-color: #2f5f98;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: #2d8bba;
+    width: 920px;
+    height: 1370px;
 }
 
 p {
-    color: rgb(204, 204, 204);
+    color: white;
     font-family: "Arimo", sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 
-ol,
-li {
+input {
+    height: 15px;
+    width: 15px;
+}
+
+label {
     color: rgb(204, 204, 204);
     font-family: "Arimo", sans-serif;
-    font-size: 20px;
+    font-size: 18px;
+    margin-left: 20px;
+
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.volver {
+    height: 30px;
+    background-color: #fdd020;
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    font-family: "Arimo", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 15px;
+    top: 100px;
+}
+
+a {
+    color: white;
+}
+
+.boton-enviar {
+    width: 100px;
+    height: 30px;
+    margin-top: 9px;
+    background-color: #00225f;
+    border: 1px solid white;
+    color: white;
+    border-radius: 15px;
 }
