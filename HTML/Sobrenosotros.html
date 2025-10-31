@@ -9,7 +9,8 @@
 
 </head>
 
-<body id="contenido">
+<body id="contenido"><!--Body tiene id para permitir que el buscador detecte todas las palabra de la página-->
+    <!--Header-->
     <header>
         <div class="fila-titulo">
             <h2 class="titulo">CLEAN <br> QUALITY</h2>
@@ -25,14 +26,17 @@
             <input type="text" id="buscador" placeholder="Buscador">
         </div>
     </header>
+    <!--Contenedor principal-->
     <div class="container">
+        <!--Formulario de contacto y sus validaciones-->
         <div class="formulario-contacto">
             <button class="btn" id="btn-formulario">Formulario Contacto <strong
                     style="margin-left:15px;  font-size:20px; color: white;">+</strong></button>
 
             <div class="container-formulario" id="container-formulario">
-                <form action="" id="formulario">
-                    <input type="text" id="nombre" class="input-formulario" placeholder="Ingrese su nombre" required>
+                <form action="" id="formulario-contacto">
+                    <input type="text" id="nombre" class="input-formulario" placeholder="Ingrese su nombre" required
+                        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="El nombre solo puede contener letras y espacios">
                     <input type="email" id="email" class="input-formulario" placeholder="Ingrese su correo" required>
                     <input type="text" id="asunto" class="input-formulario" placeholder="Ingrese el asunto" required>
                     <input type="text" id="consulta" class="input-formulario" placeholder="Ingrese la consulta"
@@ -42,6 +46,7 @@
                 </form>
             </div>
         </div>
+        <!--Información-->
         <h1 class="titulo-sobrenosotros">Sobre Nosotros</h1>
 
 
@@ -95,12 +100,13 @@
             </p>
         </div>
     </div>
+    <!--Boton de volver-->
     <div class="volver">
         <a href="../PantallaInicio.html">
             <button>Volver</button>
         </a>
     </div>
-
+    <!--Conexión con Javascript-->
     <script src="../js/script.js"></script>
 
 </body>

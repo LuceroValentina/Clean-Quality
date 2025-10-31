@@ -91,7 +91,6 @@ a {
 }
 
 .container {
-    height: 100%;
     width: 80%;
     margin-top: 14%;
     display: flex;
@@ -124,4 +123,18 @@ li {
     color: rgb(204, 204, 204);
     font-family: "Arimo", sans-serif;
     font-size: 20px;
+}
+
+button {
+    height: 30px;
+    background-color: #fdd020;
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 15px;
+    top: 15%;
+    cursor: pointer;
 }

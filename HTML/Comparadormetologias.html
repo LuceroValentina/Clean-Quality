@@ -9,25 +9,31 @@
 </head>
 
 <body>
+    <!--Header-->
     <header>
         <div class="fila-titulo">
             <h2 class="titulo">CLEAN <br> QUALITY</h2>
             <img src="../imagenes/logo.png" alt="logo de la empresa">
         </div>
         <div class="fila-inicio">
-            <h2 class="texto-inicio">Inicio</h2>
+            <a href="../PantallaInicio.html">
+                <h2 class="texto-inicio">Inicio</h2>
+            </a>
         </div>
         <div class="fila-vacia"></div>
         <div class="buscador">
             <input type="text" id="buscador" placeholder="Buscador">
         </div>
     </header>
+    <!--Contenedor Principal-->
     <div class="container" id="contenido">
         <h1>Comparador de Metodologías</h1>
+        <!--Cotenedor general que tiene el comparador de metodologías-->
         <div class="container-comparador">
             <div class="titulo-columna1">
                 <p>Metodologías</p>
             </div>
+            <!--Seleccionadores de metodologías-->
             <select name="modelos" id="select1">
                 <option value="">--Selecciona--</option>
                 <option value="cascada">Modelo Cascada</option>
@@ -47,6 +53,7 @@
                 <option value="kanban">Modelo KANBAN</option>
                 <option value="scrum">Modelo SCRUM</option>
             </select>
+            <!--Columnas con los textos a comparar-->
             <div class="columna1">
                 <div class="div-comparador">
                     <h3>Planificación del proyecto</h3>
@@ -85,9 +92,11 @@
                 <div class="info" data-row="objetivos" data-col="3"></div>
             </div>
         </div>
+        <!--Boton que lleva a la encuesta de preferencias-->
         <div class="enlace-preferencias">
             <a href="Encuesta.html">Encuesta de preferencias</a>
         </div>
+        <!--Boton para volver al principio-->
         <div class="volver">
             <a href="../PantallaInicio.html">
                 <button>Volver</button>

@@ -3,11 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
+
 body {
     padding: 0;
     margin: 0;
-    background: radial-gradient(#52a2e8, #052058);
-    overflow-x: hidden;
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(#295174, #052058);
+    position: relative;
 }
 
 header {
@@ -19,6 +22,17 @@ header {
     color: white;
     text-align: center;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.texto-inicio {
+    color: white;
+    font-family: "Jura", sans-serif;
+    font-weight: 800;
 }
 
 .fila-titulo {
@@ -27,8 +41,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid rgb(255, 255, 255);
-
 }
 
 .titulo {
@@ -36,7 +48,6 @@ header {
     font-family: "Rubik Mono One", monospace;
     font-size: 20px;
     text-align: justify;
-
 }
 
 img {
@@ -47,11 +58,13 @@ img {
 .fila-inicio {
     background-color: #0b5394;
     height: 75px;
+
 }
 
-.texto-inicio {
+h1 {
     font-family: "Jura", sans-serif;
-    font-size: 25px;
+    font-weight: 800;
+    font-size: 30px;
     color: white;
     text-align: center;
 }
@@ -91,6 +104,7 @@ h1 {
 }
 
 .seccion-fundamentos {
+    margin-top: 10%;
     border-bottom: 2px dotted white;
 }
 
@@ -114,9 +128,9 @@ h3 {
 
 li,
 p {
+    color: rgb(204, 204, 204);
     font-family: "Arimo", sans-serif;
-    font-size: 17px;
-    color: white;
+    font-size: 20px;
     text-align: justify;
     margin-left: 15px;
     width: 95%;

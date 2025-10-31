@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!--Header-->
     <header>
         <div class="fila-titulo">
             <h2 class="titulo">CLEAN <br> QUALITY</h2>
@@ -24,18 +25,19 @@
             <input type="text" id="buscador" placeholder="Buscador">
         </div>
     </header>
+    <!--Contenedor Principal-->
     <div class="container" id="contenido">
+        <!--Contenedor de la encuesta-->
         <div class="container-form">
-
             <form id="formulario">
                 <div class="form-titulo">
                     <h2>Encuesta de preferencias Metodológicas</h2>
                 </div>
-                <div class="pregunta">
+                <div class="pregunta"><!--Contendor de preguntas y opciones-->
                     <p>¿Tenés los requisitos del proyecto completamente definidos desde el inicio, o pueden ir cambiando
                         con
                         el tiempo? </p>
-                    <div class="checkbox">
+                    <div class="checkbox"><!--Opciones que con cambios en Javascript-->
                         <label><input type="radio" name="q1" value="Modelo V">Totalmente definidos</label>
                         <label><input type="radio" name="q1" value="Incremental">Pueden cambiar parcialmente</label>
                         <label><input type="radio" name="q1" value="Scrum">Irán cambiando con frecuencia</label>
@@ -131,12 +133,14 @@
 
             <p id="resultado"></p>
         </div>
+        <!--Boton de volver-->
         <div class="volver">
             <a href="../PantallaInicio.html">
                 Volver
             </a>
         </div>
     </div>
+    <!--Coneion con Javascript-->
     <script src="../js/script.js"></script>
 </body>
 

@@ -117,6 +117,7 @@ input {
     left: 0;
     width: 250px;
     margin-left: 15px;
+    font-size: 15px;
 
 }
 
@@ -132,7 +133,7 @@ input {
     color: white;
     font-family: "Arimo", sans-serif;
     text-align: center;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .funcionalidades-ul {
@@ -156,7 +157,7 @@ input {
 
 .texto-bienvenida {
     font-family: "Arimo", sans-serif;
-    font-size: 17px;
+    font-size: 20px;
     color: white;
     text-align: justify;
     width: 80%;
@@ -195,7 +196,7 @@ input {
 .texto-explicacion {
     color: white;
     font-family: "Arimo", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     width: 90%;
 }
 
@@ -204,7 +205,7 @@ input {
     text-decoration: none;
     color: white;
     font-family: "Jura", sans-serif;
-    font-size: 13.4px;
+    font-size: 15px;
 }
 
 li {
@@ -214,4 +215,6 @@ li {
 .sobrenosotros {
     margin-top: 8px;
     color: white;
+    font-size: 15px;
+
 }

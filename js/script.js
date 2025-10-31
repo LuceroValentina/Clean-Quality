@@ -1,25 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    //Buscador de títulos
+    //Buscador de títulos del header de todas las páginas
     const buscador = document.getElementById('buscador');
+
+    //Selecciona todos los títulos (h1 a h6) dentro del contenedor con id="contenido"
     const titulos = document.querySelectorAll('#contenido h1, #contenido h2, #contenido h3, #contenido h4, #contenido h5, #contenido h6');
 
+    // Verifica que existan tanto el buscador como los títulos antes de ejecutar el código
     if (buscador && titulos.length > 0) {
+
+        //Guarda el contenido original de todos los títulos (para poder restaurarlos después)
         const titulosOriginales = Array.from(titulos).map(t => t.innerHTML);
 
+        //Agrega un "escuchador" de eventos al buscador (cada vez que el usuario escribe algo)
         buscador.addEventListener('input', () => {
+            //Toma el texto que el usuario escribió, quitando espacios al principio y final
             const palabra = buscador.value.trim();
+            //Variable para saber si ya se encontró el primer resultado
             let encontrado = false;
 
+            //Recorre todos los títulos de la página
             titulos.forEach((titulo, index) => {
+                //Restaura el texto original del título (borra resaltados anteriores)
                 titulo.innerHTML = titulosOriginales[index];
 
+                //Si el campo está vacío, no hace nada
                 if (palabra === '') return;
 
+                //Crea una expresión regular para buscar la palabra escrita (sin distinguir mayúsculas/minúsculas)
                 const regex = new RegExp(`(${palabra})`, 'gi');
-                if (regex.test(titulo.textContent)) {
-                    titulo.innerHTML = titulo.textContent.replace(regex, '<span style="background-color: red;">$1</span>');
 
+                //Si el título contiene la palabra buscada...
+                if (regex.test(titulo.textContent)) {
+                    //Resalta la palabra encontrada con un fondo rojo
+                    titulo.innerHTML = titulo.textContent.replace(
+                        regex,
+                        '<span style="background-color: red;">$1</span>'
+                    );
+
+                    //Hace scroll suave hasta el primer título encontrado
                     if (!encontrado) {
                         titulo.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         encontrado = true;
@@ -29,45 +48,108 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    //Comparador de metodologías
+    //Comparador de metodologías 
+
     const data = {
-        cascada: { planificacion: "Secuencial, fases fijas", flexibilidad: "Muy baja", retroalimentacion: "Al final del proyecto", entrega: "Producto único al final", roles: "Analista, desarrollador, tester", herramientas: "Documentación, diagramas de Gantt", objetivos: "Cumplir especificaciones iniciales" },
-        modelov: { planificacion: "Secuencial con pruebas asociadas", flexibilidad: "Muy baja", retroalimentacion: "Al final de cada validación", entrega: "Única al final", roles: "Analista, diseñador, tester", herramientas: "Documentación y pruebas", objetivos: "Garantizar calidad y verificación" },
-        iterativo: { planificacion: "Iteraciones planificadas y entregas parciales", flexibilidad: "Media a alta", retroalimentacion: "En cada incremento", entrega: "Parcial y frecuente", roles: "Equipo técnico y gestor", herramientas: "Jira, Trello, herramientas de seguimiento", objetivos: "Adaptarse a cambios gradualmente" },
-        scrum: { planificacion: "Iteraciones (Sprints)", flexibilidad: "Alta", retroalimentacion: "En cada sprint", entrega: "En cada sprint", roles: "Product Owner, Scrum Master, Equipo", herramientas: "Jira, Trello", objetivos: "Entregar valor y mejorar continuamente" },
-        kanban: { planificacion: "Flujo continuo", flexibilidad: "Muy alta", retroalimentacion: "Continua", entrega: "Entrega continua", roles: "Sin roles definidos", herramientas: "Trello, Kanbanize", objetivos: "Mantener flujo eficiente" },
-        xp: { planificacion: "Iteraciones cortas", flexibilidad: "Alta", retroalimentacion: "Constante", entrega: "Entregas frecuentes", roles: "Programadores y cliente activo", herramientas: "Git, Jenkins", objetivos: "Mejorar calidad del código" },
+        cascada: {
+            planificacion: "Secuencial, fases fijas",
+            flexibilidad: "Muy baja",
+            retroalimentacion: "Al final del proyecto",
+            entrega: "Producto único al final",
+            roles: "Analista, desarrollador, tester",
+            herramientas: "Documentación, diagramas de Gantt",
+            objetivos: "Cumplir especificaciones iniciales"
+        },
+        modelov: {
+            planificacion: "Secuencial con pruebas asociadas",
+            flexibilidad: "Muy baja",
+            retroalimentacion: "Al final de cada validación",
+            entrega: "Única al final",
+            roles: "Analista, diseñador, tester",
+            herramientas: "Documentación y pruebas",
+            objetivos: "Garantizar calidad y verificación"
+        },
+        iterativo: {
+            planificacion: "Iteraciones planificadas y entregas parciales",
+            flexibilidad: "Media a alta",
+            retroalimentacion: "En cada incremento",
+            entrega: "Parcial y frecuente",
+            roles: "Equipo técnico y gestor",
+            herramientas: "Jira, Trello, herramientas de seguimiento",
+            objetivos: "Adaptarse a cambios gradualmente"
+        },
+        scrum: {
+            planificacion: "Iteraciones (Sprints)",
+            flexibilidad: "Alta",
+            retroalimentacion: "En cada sprint",
+            entrega: "En cada sprint",
+            roles: "Product Owner, Scrum Master, Equipo",
+            herramientas: "Jira, Trello",
+            objetivos: "Entregar valor y mejorar continuamente"
+        },
+        kanban: {
+            planificacion: "Flujo continuo",
+            flexibilidad: "Muy alta",
+            retroalimentacion: "Continua",
+            entrega: "Entrega continua",
+            roles: "Sin roles definidos",
+            herramientas: "Trello, Kanbanize",
+            objetivos: "Mantener flujo eficiente"
+        },
+        xp: {
+            planificacion: "Iteraciones cortas",
+            flexibilidad: "Alta",
+            retroalimentacion: "Constante",
+            entrega: "Entregas frecuentes",
+            roles: "Programadores y cliente activo",
+            herramientas: "Git, Jenkins",
+            objetivos: "Mejorar calidad del código"
+        },
     };
 
+    // Función que actualiza la tabla comparativa según los valores seleccionados
     function actualizar() {
+        // Obtiene los elementos <select> del HTML
         const select1 = document.getElementById("select1");
         const select2 = document.getElementById("select2");
-        if (!select1 || !select2) return;
+        if (!select1 || !select2) return; // Si no existen, sale
 
+        // Guarda los valores seleccionados de ambos select
         const metodo1 = select1.value;
         const metodo2 = select2.value;
 
+        // Deshabilita en cada select el método que ya está elegido en el otro
         Array.from(select1.options).forEach(opt => opt.disabled = (opt.value === metodo2 && opt.value !== ""));
         Array.from(select2.options).forEach(opt => opt.disabled = (opt.value === metodo1 && opt.value !== ""));
 
+        // Recorre todos los elementos con clase .info (las celdas de la tabla)
         document.querySelectorAll(".info").forEach(div => {
-            const row = div.dataset.row;
-            const col = div.dataset.col;
+            const row = div.dataset.row; // tipo de dato (planificacion, flexibilidad, etc.)
+            const col = div.dataset.col; // columna (2 = primer método, 3 = segundo método)
 
-            if (col === "2" && metodo1 && data[metodo1]) div.textContent = data[metodo1][row] || "";
-            if (col === "3" && metodo2 && data[metodo2]) div.textContent = data[metodo2][row] || "";
+            // Si corresponde a la columna del primer select, muestra sus datos
+            if (col === "2" && metodo1 && data[metodo1])
+                div.textContent = data[metodo1][row] || "";
+
+            // Si corresponde a la columna del segundo select, muestra sus datos
+            if (col === "3" && metodo2 && data[metodo2])
+                div.textContent = data[metodo2][row] || "";
         });
     }
 
+    // Obtiene las referencias de los select
     const s1 = document.getElementById("select1");
     const s2 = document.getElementById("select2");
+
+    // Si existen, agrega eventos para actualizar la tabla al cambiar las opciones
     if (s1 && s2) {
         s1.addEventListener("change", actualizar);
         s2.addEventListener("change", actualizar);
-        actualizar();
+        actualizar(); // Llama una vez al cargar la página para inicializar
     }
 
-    // Formulario de contacto FIJARSE SI ANDA
+
+    // Formulario de contacto 
     const contactoForm = document.getElementById('formulario-contacto');
     if (contactoForm) {
         contactoForm.addEventListener('submit', (event) => {
@@ -85,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    //Botón desplegar formulario
+    //Botón que despliega el formulario, en la página Sobre Nosotros
     const btn = document.getElementById('btn-formulario');
     const container = document.getElementById('container-formulario');
     if (btn && container) {
@@ -95,16 +177,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Encuesta
+    // Encuesta de página encuesta de preferencias
     const encuestaForm = document.getElementById("formulario");
     const resultado = document.getElementById("resultado");
 
+    // Si alguno de los dos elementos no existe, el script no se ejecuta
     if (!encuestaForm || !resultado) return;
 
     encuestaForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Evita que el formulario se envíe y recargue la página
 
+        // Obtiene todas las preguntas del formulario (cada una con clase .pregunta)
         const preguntas = document.querySelectorAll(".pregunta");
+
+        // Crea un objeto para contar cuántas respuestas corresponden a cada metodología
         let conteo = {
             "Modelo V": 0,
             "Cascada": 0,
@@ -112,93 +198,166 @@ document.addEventListener('DOMContentLoaded', () => {
             "Kanban": 0,
             "Incremental": 0
         };
+
+        // Variable para saber si el formulario está completo
         let valido = true;
 
+        // Recorre todas las preguntas
         preguntas.forEach((pregunta, index) => {
+            // Busca cuál opción del radio html fue seleccionada dentro de la pregunta
             const seleccion = pregunta.querySelector('input[type="radio"]:checked');
 
+            // Si no hay ninguna opción seleccionada, muestra un aviso
             if (!seleccion) {
                 alert(`Falta seleccionar una opción en la pregunta ${index + 1}`);
-                valido = false;
+                valido = false; // Marca que hay un error
             } else {
+                // Si hay una opción elegida, suma 1 al conteo de la metodología elegida
                 conteo[seleccion.value]++;
             }
         });
 
+        // Si alguna pregunta no fue respondida, detiene la ejecución
         if (!valido) return;
 
-        // Buscamos la(s) metodología(s) con más puntos
+        // Busca el valor más alto dentro del objeto conteo (la metodología más elegida)
         const max = Math.max(...Object.values(conteo));
+
+        // Busca todas las metodologías que tienen ese valor máximo (por si hay empate)
         const maxValues = Object.keys(conteo).filter(key => conteo[key] === max);
 
         let metodologia = "";
         if (maxValues.length === 1) {
-            metodologia = maxValues[0]; // solo la que tiene más puntos
+            // Si hay una sola metodología ganadora, se elige esa
+            metodologia = maxValues[0];
         } else {
-            metodologia = maxValues.join(" o "); // empate
+            // Si hay empate, las une con "o"
+            metodologia = maxValues.join(" o ");
         }
 
+        // Muestra en pantalla el resultado final dentro del elemento con id "resultado"
         resultado.textContent = `Recomendamos: ${metodologia}`;
     });
 
-    // Juego de memoria con metodologías
+
 
 });
+//Juego de Cartas (Memotest) Página Recursos y Aprendizajes
+
 const totalCartas = 12;
 let cartas = [];
-let Cartaseleccionada = [];
+let cartasSeleccionadas = [];
 let currentMove = 0;
 let intentos = 0;
+let bloqueo = false;
 
-// Lista de metodologías (se repetirán para hacer pares)
+// Listas base de metodologías y sus imágenes asociadas
 const metodologiasBase = ["Kanban", "Scrum", "Iterativo", "Cascada", "Modelo V", "XP"];
+const graficosMetodologias = [
+    "../imagenes/minigraficokanban.png",
+    "../imagenes/minigraficoscrum.png",
+    "../imagenes/minigraficoiterativo.png",
+    "../imagenes/minigraficocascada.png",
+    "../imagenes/minigraficomodelov.png",
+    "../imagenes/minigraficoxp.png"
+];
 
-let TemplateCarta = `
+// Plantilla HTML de una carta
+const TemplateCarta = `
   <div class="carta">
     <div class="cruz"><img src="../imagenes/logo.png" class="img"></div>
     <div class="cara"></div>
   </div>
 `;
 
-// Función que se ejecuta al hacer clic en una carta
+//Genera 12 cartas: 6 con nombres y 6 con imágenes
+let valores = [];
+for (let i = 0; i < metodologiasBase.length; i++) {
+    valores.push({ tipo: "nombre", valor: metodologiasBase[i] }); // Carta con nombre
+    valores.push({ tipo: "grafico", valor: graficosMetodologias[i] }); // Carta con gráfico
+}
+// Mezcla las cartas de forma aleatoria
+valores = valores.sort(() => Math.random() - 0.5);
+
+//Crea las cartas 
+for (let i = 0; i < totalCartas; i++) {
+    const div = document.createElement("div");
+    div.innerHTML = TemplateCarta;
+    cartas.push(div);
+    document.querySelector("#game").append(cartas[i]);
+    const cara = cartas[i].querySelector(".cara");
+
+    // Si es una carta de nombre, muestra texto; si es gráfica, muestra imagen
+    if (valores[i].tipo === "nombre") {
+        cara.textContent = valores[i].valor;
+    } else {
+        cara.innerHTML = `<img src="${valores[i].valor}" class="grafico">`;
+    }
+
+    // Agrega el evento de clic a cada carta
+    cartas[i].querySelector(".carta").addEventListener("click", activate);
+}
+
+//Función que se ejecuta al hacer clic en una carta
 function activate(e) {
+    if (bloqueo) return; // Si está bloqueado, no hace nada
     const carta = e.currentTarget;
-    if (carta.classList.contains("active")) return;
+    if (carta.classList.contains("active")) return; // Ignora cartas ya activas
 
-    if (currentMove < 2) {
-        carta.classList.add("active");
-        Cartaseleccionada.push(carta);
-        currentMove++;
+    carta.classList.add("active"); // Muestra la carta
+    cartasSeleccionadas.push(carta);
+    currentMove++;
 
-        if (currentMove === 2) {
-            intentos++;
-            document.querySelector("#stats").innerHTML = intentos + " intentos";
+    // Si se seleccionaron dos cartas, las compara
+    if (currentMove === 2) {
+        bloqueo = true; // Bloquea clics mientras se comparan
+        intentos++;
+        document.querySelector("#stats").innerHTML = intentos + " intentos";
 
-            const valor1 = Cartaseleccionada[0].querySelector(".cara").innerHTML;
-            const valor2 = Cartaseleccionada[1].querySelector(".cara").innerHTML;
+        const valor1 = getValor(cartasSeleccionadas[0]);
+        const valor2 = getValor(cartasSeleccionadas[1]);
 
-            if (valor1 === valor2) {
-                // Pareja correcta
-                Cartaseleccionada = [];
+        // Si son pareja correcta
+        if (sonPareja(valor1, valor2)) {
+            cartasSeleccionadas = [];
+            currentMove = 0;
+            bloqueo = false; // Desbloquea clics
+            checkWin(); // Verifica si ganó el juego
+        } else {
+            // Si no coinciden, las voltea nuevamente
+            setTimeout(() => {
+                cartasSeleccionadas[0].classList.remove("active");
+                cartasSeleccionadas[1].classList.remove("active");
+                cartasSeleccionadas = [];
                 currentMove = 0;
-
-                // 🔹 Verificar si ganó
-                checkWin();
-
-            } else {
-                // No coinciden
-                setTimeout(() => {
-                    Cartaseleccionada[0].classList.remove("active");
-                    Cartaseleccionada[1].classList.remove("active");
-                    Cartaseleccionada = [];
-                    currentMove = 0;
-                }, 600);
-            }
+                bloqueo = false;
+            }, 800);
         }
     }
 }
 
-// 🔹 Función para comprobar si ganó
+//Devuelve el valor de una carta (nombre o ruta de imagen)
+function getValor(carta) {
+    return (
+        carta.querySelector(".cara").textContent.trim() ||
+        carta.querySelector(".cara img")?.getAttribute("src")
+    );
+}
+
+//Verifica si dos cartas son pareja 
+function sonPareja(valor1, valor2) {
+    for (let i = 0; i < metodologiasBase.length; i++) {
+        if (
+            (valor1 === metodologiasBase[i] && valor2.includes(graficosMetodologias[i])) ||
+            (valor2 === metodologiasBase[i] && valor1.includes(graficosMetodologias[i]))
+        ) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Comprueba si se ganó el juego
 function checkWin() {
     const activas = document.querySelectorAll(".carta.active").length;
     if (activas === totalCartas) {
@@ -208,30 +367,9 @@ function checkWin() {
     }
 }
 
-// Generar los valores de las cartas (pares aleatorios)
-function generarValores() {
-    let valores = [...metodologiasBase, ...metodologiasBase]; // duplicamos para hacer pares
-    valores = valores.sort(() => Math.random() - 0.5); // mezclamos
-    return valores.slice(0, totalCartas);
-}
-
-const valoresFinales = generarValores();
-
-// Crear las cartas en el DOM
-for (let i = 0; i < totalCartas; i++) {
-    const div = document.createElement("div");
-    div.innerHTML = TemplateCarta;
-    cartas.push(div);
-    document.querySelector("#game").append(cartas[i]);
-    const cara = cartas[i].querySelector(".cara");
-    cara.innerHTML = valoresFinales[i];
-    cartas[i].querySelector(".carta").addEventListener("click", activate);
-}
-
-
-
-//unir con definiciones
+//Juego "Unir con Definiciones" Página Recursos y Aprendizajes
 document.addEventListener('DOMContentLoaded', () => {
+    // Listas de nombres y sus definiciones correspondientes
     const nombres = ["Kanban", "Scrum", "XP", "Modelo V", "Cascada", "Iterativo"];
     const definiciones = [
         "Es ideal para equipos, en entornos cambiantes, donde las tareas surgen y se resuelven de manera continua",
@@ -242,89 +380,93 @@ document.addEventListener('DOMContentLoaded', () => {
         "Modelo en donde el sistema se construye en ciclos repetidos, donde cada ciclo revisa, mejora y amplía lo ya desarrollado"
     ];
 
+    // Elementos
     const gameNombres = document.getElementById('nombres');
     const gameDefiniciones = document.getElementById('definiciones');
     const resultado = document.getElementById('resultado');
+    let selectedName = null; // Guarda el nombre seleccionado actualmente
 
-    let selectedName = null;
-
-    // Mezclar definiciones para que no queden ordenadas
+    //Mezcla aleatoriamente las definiciones
     const shuffledDefiniciones = definiciones
-        .map(def => ({ def, sort: Math.random() }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(obj => obj.def);
+        .map(def => ({ def, sort: Math.random() })) // Asigna un valor aleatorio
+        .sort((a, b) => a.sort - b.sort) // Ordena según el número aleatorio
+        .map(obj => obj.def); // Devuelve solo el texto
 
-    // Crear elementos HTML
+    //Crea los elementos de los nombres
     nombres.forEach((name, index) => {
         const div = document.createElement('div');
         div.textContent = name;
         div.classList.add('item');
-        div.dataset.index = index;
+        div.dataset.index = index; // Guarda su posición
         div.addEventListener('click', () => selectName(div));
         gameNombres.appendChild(div);
     });
 
+    //Crea los elementos de las definiciones (mezcladas)
     shuffledDefiniciones.forEach((def, index) => {
         const div = document.createElement('div');
         div.textContent = def;
         div.classList.add('item');
-        div.dataset.def = def;
+        div.dataset.def = def; // Guarda el texto de la definición
         div.addEventListener('click', () => selectDefinition(div));
         gameDefiniciones.appendChild(div);
     });
 
+    //Selecciona un nombre para emparejar
     function selectName(div) {
-        if (div.classList.contains('matched')) return;
+        if (div.classList.contains('matched')) return; // Ignora si ya está emparejado
         selectedName = div;
-        highlight(div);
+        highlight(div); // Resalta el nombre elegido
     }
 
+    //Selecciona una definición para emparejar con el nombre seleccionado
     function selectDefinition(div) {
         if (!selectedName || div.classList.contains('matched')) return;
 
         const nameIndex = parseInt(selectedName.dataset.index);
+        // Compara si la definición seleccionada corresponde al nombre
         if (definiciones[nameIndex] === div.dataset.def) {
-            // Correcto
             selectedName.classList.add('matched');
             div.classList.add('matched');
-            alert("Correcto");
+            alert("Correcto"); // Acierto
         } else {
-            alert("Intenta de nuevo");
-            ;
+            alert("Intenta de nuevo"); // Error
         }
 
-        selectedName = null;
-        clearHighlights();
+        selectedName = null; // Reinicia selección
+        clearHighlights(); // Quita resaltados
     }
 
+    //Resalta el nombre seleccionado
     function highlight(div) {
         clearHighlights();
         div.style.backgroundColor = "#ffd700";
     }
 
+    //Limpia los colores de los elementos no emparejados
     function clearHighlights() {
         document.querySelectorAll('.item').forEach(item => {
             if (!item.classList.contains('matched')) {
                 item.style.backgroundColor = "#ffe477ff";
                 item.style.color = "rgb(39, 39, 39)";
-
             }
         });
     }
 });
-// Selecciona todos los botones
+
+//Comportamiento de preguntas tipo acordeón (abre y cierra)
 const botones = document.querySelectorAll(".pregunta button");
 
 botones.forEach(boton => {
-  boton.addEventListener("click", () => {
-    const pregunta = boton.parentElement;
+    boton.addEventListener("click", () => {
+        const pregunta = boton.parentElement;
 
-    // Cierra otras preguntas si querés que solo una esté abierta
-    document.querySelectorAll(".pregunta").forEach(p => {
-      if (p !== pregunta) p.classList.remove("activa");
+        // Cierra las demás preguntas abiertas
+        document.querySelectorAll(".pregunta").forEach(p => {
+            if (p !== pregunta) p.classList.remove("activa");
+        });
+
+        // Alterna la pregunta actual (abre o cierra)
+        pregunta.classList.toggle("activa");
     });
-
-    // Alterna la clase activa
-    pregunta.classList.toggle("activa");
-  });
 });
